@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+ 
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
+ 
+	
+	<link rel="stylesheet" href="css/fakeLoader.css">
+<script src="js/fakeLoader.min.js"></script> 
+
+  <script src="js/script.js"></script>
+</head>	
+<body>
+<div class="fakeloader"></div>
+
+<div class='form animated flipInX'>
+  <h2>Login To Your Account</h2>
+  <form>
+    <input placeholder='Username' type='text' title="Please provide valid user name" >
+    <input placeholder='Password' type='password'  title="Please enter valid Password" >
+	<select  title="Please Choose your Role" >
+		<option value="admin" title="Admin access" >Admin</option>
+		<option value="operator" title="Operator access"  >Operator</option>
+		<option value="user" selected = "selected" title="User access"  >User</option>
+	</select>
+    <button id="submit" class='animated infinite pulse' title="Login to the system" onclick="myFunction()"  >Login</button>
+  </form>
+</div>
+</body>
+</html>

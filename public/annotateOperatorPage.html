@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <script src="/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <script src="/plugins/jQueryUI/jquery-ui-1.10.3.min.js"></script>
+    <script src="js/signature_pad.js">
+    </script>
+    <link rel="stylesheet" href="/css/form.css" />
+</head>
+
+<body>
+    <a href="#" id="menu" style='z-index:1'>Textbox</a>
+    <a href="#" id="sign" style='z-index:1'>sign</a>
+
+    <div id="selectable" class="img-wrap">
+        <div class='inner'>
+            <canvas id="myCanvas" class="mcanvas"></canvas>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#menu").draggable({
+            revert: "valid"
+        });
+
+        $("#sign").draggable({
+            revert: "valid"
+        });
+
+
+
+
+        $("#myCanvas").droppable({
+            drop: function (event, ui) {
+                if (ui.draggable.attr('id') == 'menu') {
+                    var pos = ui.draggable.offset(),
+                        dPos = $(this).offset();
+                    alert("nodeid: " + ui.draggable.data("noteid") + ", Top: " + (pos.top - dPos.top) + ", Left: " + (pos.left - dPos.left));
+                    var x = pos.left - dPos.left; //pos.left;
+                    var y = pos.top - dPos.top; //pos.top;
+                    $(this).parent().append('<textarea style="position: absolute; z-index: 1; left:' + x + '; top: ' + y + ';"  rows=1 cols=5 name="textarea" value="" />');
+
+                } else if (ui.draggable.attr('id') == 'sign') {
+                    var pos = ui.draggable.offset(),
+                        dPos = $(this).offset();
+                    alert("nodeid: " + ui.draggable.data("noteid") + ", Top: " + (pos.top - dPos.top) + ", Left: " + (pos.left - dPos.left));
+                    var x = pos.left - dPos.left; //pos.left;
+                    var y = pos.top - dPos.top; //pos.top;
+
+                    $(this).parent().append('<canvas id="canvas1" width="100" height="50" style="position: absolute; z-index: 1; left:' + x + '; top: ' + y + '; border:1px solid #000000;" />');
+
+
+                }
+            }
+        });
+
+        $("#selectable").selectable();
+
+    });
+</script>
+
+
+</html>

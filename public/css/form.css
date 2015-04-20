@@ -1,0 +1,47 @@
+ 
+        #selectable .ui-selecting {
+            background: #FECA40;
+        }
+        
+        #selectable .ui-selected {
+            background: #F39814;
+            color: white;
+        }
+        
+        textarea {
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            resize: horizontal
+        }
+        
+        .img-wrap {
+            position: relative;
+            overflow: auto;
+            height: 520px;
+            width: 520px;
+            border: 2px solid;
+            border-radius: 25px;
+        }
+        
+        .inner {
+            position: relative;
+            height: auto;
+        }
+        
+        #selectable::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+        
+        #selectable::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+        
+        #selectable::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #555;
+        }
