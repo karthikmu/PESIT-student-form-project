@@ -323,6 +323,10 @@
         });
 
         $("#form").change(function () {
+
+            $('.sele').remove();
+            $('#canvas1').remove();
+
             $.ajax({
                 type: "POST",
                 url: "/getformdata",
